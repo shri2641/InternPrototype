@@ -1,0 +1,315 @@
+:root {
+  --color-canvas-default: #0d1117;
+  --color-canvas-subtle: #161b22;
+  --color-border-default: #30363d;
+  --color-border-muted: #21262d;
+  --color-fg-default: #c9d1d9;
+  --color-fg-muted: #8b949e;
+  --color-accent-fg: #58a6ff;
+  --color-btn-text: #c9d1d9;
+  --color-btn-bg: #21262d;
+  --color-btn-border: rgba(240, 246, 252, 0.1);
+  --color-btn-hover-bg: #30363d;
+  --color-btn-hover-border: #8b949e;
+  --color-header-bg: #161b22;
+  --font-body: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  --font-mono: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-canvas-default);
+  color: var(--color-fg-default);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-accent-fg);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  border: 1px solid var(--color-btn-border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  transition: .2s cubic-bezier(0.3, 0, 0.5, 1);
+  font-family: inherit;
+}
+
+button:hover {
+  background-color: var(--color-btn-hover-bg);
+  border-color: var(--color-btn-hover-border);
+}
+
+.header {
+  background-color: var(--color-header-bg);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-default);
+  gap: 16px;
+}
+
+.header svg {
+  fill: var(--color-fg-default);
+}
+
+.search-input {
+  background-color: var(--color-canvas-default);
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  color: var(--color-fg-default);
+  padding: 5px 12px;
+  font-size: 14px;
+  width: 280px;
+}
+
+.repo-header {
+  background-color: var(--color-canvas-default);
+  border-bottom: 1px solid var(--color-border-default);
+  padding: 16px 32px 0;
+}
+
+.repo-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.repo-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+}
+
+.repo-title a {
+  color: var(--color-accent-fg);
+}
+
+.repo-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.repo-badge {
+  border: 1px solid var(--color-border-default);
+  border-radius: 2em;
+  padding: 0 7px;
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  display: flex;
+  align-items: center;
+}
+
+.repo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.repo-tabs {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.repo-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px 12px;
+  color: var(--color-fg-default);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.repo-tab:hover {
+  border-bottom-color: var(--color-border-default);
+}
+
+.repo-tab.active {
+  border-bottom-color: #f78166;
+  font-weight: 600;
+}
+
+.main-content {
+  display: flex;
+  padding: 24px 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+.file-explorer-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  width: 296px;
+  flex-shrink: 0;
+}
+
+.file-explorer {
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  background-color: var(--color-canvas-default);
+  margin-top: 16px;
+}
+
+.file-explorer-header {
+  background-color: var(--color-canvas-subtle);
+  border-bottom: 1px solid var(--color-border-default);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.commit-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.commit-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.commit-message {
+  color: var(--color-fg-default);
+  font-weight: 600;
+}
+
+.commit-time {
+  color: var(--color-fg-muted);
+}
+
+.file-row {
+  display: flex;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-border-muted);
+}
+
+.file-row:last-child {
+  border-bottom: none;
+}
+
+.file-row:hover {
+  background-color: var(--color-canvas-subtle);
+}
+
+.file-icon {
+  width: 24px;
+  color: var(--color-fg-muted);
+}
+
+.file-icon svg {
+  fill: var(--color-fg-muted);
+}
+
+.file-icon.folder svg {
+  fill: #79c0ff;
+}
+
+.file-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-name a {
+  color: var(--color-fg-default);
+}
+
+.file-name a:hover {
+  color: var(--color-accent-fg);
+}
+
+.file-commit {
+  flex: 2;
+  color: var(--color-fg-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 16px;
+}
+
+.file-date {
+  width: 120px;
+  color: var(--color-fg-muted);
+  text-align: right;
+}
+
+.readme-section {
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  margin-top: 24px;
+}
+
+.readme-header {
+  padding: 12px 16px;
+  background-color: var(--color-canvas-subtle);
+  border-bottom: 1px solid var(--color-border-default);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.readme-content {
+  padding: 32px;
+  font-family: var(--font-body);
+}
+
+.readme-content h1 {
+  border-bottom: 1px solid var(--color-border-muted);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.readme-content p {
+  margin-bottom: 16px;
+}
+
+.sidebar h2 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--color-fg-default);
+}
+
+.sidebar-section {
+  border-bottom: 1px solid var(--color-border-default);
+  padding: 16px 0;
+}
+
+.sidebar-section:first-child {
+  padding-top: 0;
+}
+
+.sidebar-section p {
+  color: var(--color-fg-muted);
+  margin-bottom: 16px;
+}
