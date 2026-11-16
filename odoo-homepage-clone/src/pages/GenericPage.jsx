@@ -13,35 +13,25 @@ const GenericPage = () => {
     .join(' > ');
 
   return (
-    <div style={{
-      minHeight: '60vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '4rem 2rem',
-      textAlign: 'center',
-      backgroundColor: '#f8f9fa'
-    }}>
-      <div style={{
-        backgroundColor: '#fff',
-        padding: '4rem',
-        borderRadius: '1rem',
-        boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-        maxWidth: '600px',
-        width: '100%'
-      }}>
-        <div style={{fontSize: '4rem', marginBottom: '1rem'}}>🚧</div>
-        <h1 style={{fontSize: '2rem', color: '#212529', marginBottom: '1rem', fontFamily: '"Inter", sans-serif'}}>
-          {title || 'Page'}
+    <div className="generic-page-wrap">
+      <div className="generic-page-card">
+        <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>📦</div>
+        <h1 style={{ fontSize: '1.75rem', marginBottom: '1rem' }}>
+          {title || 'Module'}
         </h1>
-        <p style={{color: '#6c757d', marginBottom: '2rem', fontSize: '1.1rem'}}>
-          This module is part of the Odoo suite but is currently under construction in this clone. 
-          Check back later for full functionality!
+        <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '1.05rem', lineHeight: '1.6' }}>
+          You have selected <strong>{title || 'this module'}</strong>. 
+          The full modern <strong>Inventory Management System</strong> is now live with real-time stock control, analytics, and suppliers!
         </p>
-        <Link to="/" className="btn btn-primary" style={{padding: '0.75rem 2rem'}}>
-          Back to Homepage
-        </Link>
+
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link to="/dashboard" className="btn btn-primary" style={{ padding: '0.75rem 1.75rem' }}>
+            Open Inventory Dashboard →
+          </Link>
+          <Link to="/home" className="btn btn-secondary" style={{ padding: '0.75rem 1.5rem' }}>
+            Back to Homepage
+          </Link>
+        </div>
       </div>
     </div>
   );
